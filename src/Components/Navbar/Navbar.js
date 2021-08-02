@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import MenuIcon from '@material-ui/icons/Menu';
 import CloseIcon from '@material-ui/icons/Close';
@@ -44,47 +45,71 @@ const Navbar = () => {
         else setDisplay("block");
     }
 
-    const desktopView = <Bar>
-            <NavHome>
-                <NavLogo alt="logo" src={Logo} />
-            </NavHome> 
-            <NavLink>
-                <Typography variant="body1">About Us</Typography>
-            </NavLink>
-            <NavLink>
-                <Typography variant="body1">Gallery</Typography>
-            </NavLink>
-            <NavLink>
-                <Typography variant="body1">Transformations</Typography>    
-            </NavLink>
-            <NavLink>
-                <Typography variant="body1">Training Programs</Typography>
-            </NavLink>
-            <NavMenu />
-        </Bar>;
+    const desktopView = 
+            <nav>
+                <Bar>
+                    <NavHome>
+                        <Link to="/">
+                            <NavLogo alt="logo" src={Logo} />
+                        </Link>
+                    </NavHome> 
+                    <NavLink>
+                        <Typography variant="body1">
+                            <Link to="/about">About Us</Link>
+                        </Typography>
+                    </NavLink>
+                    <NavLink>
+                        <Typography variant="body1">
+                            <Link to="/gallery">Gallery</Link>
+                        </Typography>
+                    </NavLink>
+                    <NavLink>
+                        <Typography variant="body1">
+                            <Link to="/transformations">Transformations</Link>
+                        </Typography>    
+                    </NavLink>
+                    <NavLink>
+                        <Typography variant="body1">Training Programs</Typography>
+                    </NavLink>
+                    <NavMenu />
+                </Bar>
+            </nav>;
 
-    const mobileView = <Bar position="relative">
-            <NavHome>
-                <NavLogo alt="logo" src={Logo} display="mobile" />
-            </NavHome>
-            <NavLink float="none" textAlign="left" display={display} style={{marginTop: '55'}}>
-                <Typography variant="body1">Training Programs</Typography>
-            </NavLink>
-            <NavLink float="none" textAlign="left" display={display}>
-                <Typography variant="body1">Transformations</Typography>    
-            </NavLink>
-            <NavLink float="none" textAlign="left" display={display}>
-                <Typography variant="body1">Gallery</Typography>
-            </NavLink>
-            <NavLink float="none" textAlign="left" display={display}>
-                <Typography variant="body1">About Us</Typography>
-            </NavLink>
-            <NavMenu display="block" onClick={menuClickHandler}>
-                {
-                    display==="none"? <MenuIcon />: <CloseIcon />
-                }
-            </NavMenu>
-        </Bar>;
+    const mobileView = 
+            <nav>
+                <Bar position="relative">
+                    <NavHome>
+                        <Link to="/">
+                            <NavLogo alt="logo" src={Logo} display="mobile" />
+                        </Link>
+                    </NavHome>
+                    <NavLink float="none" textAlign="left" display={display} style={{marginTop: '55px'}}>
+                        <Typography variant="body1">
+                            <Link>Training Programs</Link>
+                        </Typography>
+                    </NavLink>
+                    <NavLink float="none" textAlign="left" display={display}>
+                        <Typography variant="body1">
+                            <Link to="/transformations">Transformations</Link>
+                        </Typography>    
+                    </NavLink>
+                    <NavLink float="none" textAlign="left" display={display}>
+                        <Typography variant="body1">
+                            <Link to="/gallery">Gallery</Link>
+                        </Typography>
+                    </NavLink>
+                    <NavLink float="none" textAlign="left" display={display}>
+                        <Typography variant="body1">
+                            <Link to="/about">About Us</Link>
+                        </Typography>
+                    </NavLink>
+                    <NavMenu display="block" onClick={menuClickHandler}>
+                        {
+                            display==="none"? <MenuIcon />: <CloseIcon />
+                        }
+                    </NavMenu>
+                </Bar>
+            </nav>;
 
     const isDesktop = useMediaQuery({ query: '(min-device-width: 1224px)' });
 
