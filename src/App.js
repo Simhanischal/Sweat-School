@@ -1,8 +1,8 @@
 import './App.css';
 import { Switch, Route } from 'react-router-dom';
 import { StylesProvider } from '@material-ui/core/styles';
-import ProgramDetails from './Pages/Programs/Components/ProgramDetails';
-import Calisthenics from './Images/Calisthenics.png';
+// import ProgramDetails from './Pages/Programs/Components/ProgramDetails';
+// import Calisthenics from './Images/Calisthenics.png';
 import Navbar from './Components/Navbar';
 import Footer from './Components/Footer';
 // import Carousel from './Components/Carousel';
@@ -16,7 +16,8 @@ import Gallery from './Pages/Gallery/Gallery';
 import Home from './Pages/Home/Home';
 // import TrainingPrograms from './Pages/Home/Components/TrainingPrograms';
 // import UniqueFeatures from './Pages/Home/Components/UniqueFeatures';
-// import WhatsappLink from './Components/WhatsappLink/WhatsappLink';
+import WhatsappLink from './Components/WhatsappLink/WhatsappLink';
+import ProgramDetails from './Pages/Programs/Components/ProgramDetails';
 
 function App() {
   return (
@@ -30,6 +31,9 @@ function App() {
           <Route path="/gallery">
             <Gallery />
           </Route>
+          <Route path="/trainings/:selectedProgram">
+            <ProgramDetails />
+          </Route>
           <Route path="/transformations">
             <Transformations />
           </Route>
@@ -38,6 +42,7 @@ function App() {
           </Route>
         </Switch>
         <Footer />
+        <WhatsappLink />
       {/* <WhatsappLink />
         <Footer />
         <UniqueFeatures />

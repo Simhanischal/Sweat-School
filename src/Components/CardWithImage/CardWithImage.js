@@ -8,6 +8,9 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core';
 
 const useStyles = makeStyles({
+    actionArea: {
+        cursor: "auto",  
+    },
     card: {
         boxShadow: "0 4px 8px 0 rgba(0,0,0,0.5)",
         transition: "0.3s",
@@ -21,7 +24,7 @@ const CardWithImage = props => {
     const classes = useStyles();
     return(
         <Card className={classes.card}>
-            <CardActionArea>
+            <CardActionArea className={classes.actionArea}>
                 {
                     props.icon
                     ? <CardMedia>

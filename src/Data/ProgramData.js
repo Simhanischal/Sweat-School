@@ -1,4 +1,4 @@
-import FunctionalTraining from '../Images/Functionl.png';
+import FunctionalTraining from '../Images/Functional.png';
 import Calisthenics from '../Images/Calisthenics.png';
 import AnimalFlow from '../Images/AnimalFlow.png';
 
@@ -19,6 +19,6 @@ export const Programs = [
         id: 2,
         name: 'Animal Flow',
         image: AnimalFlow,
-        description: 'Animal Flowl descripton here',
+        description: 'Animal Flow descripton here',
     },
 ];

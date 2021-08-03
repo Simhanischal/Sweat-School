@@ -1,7 +1,6 @@
 import React from 'react';
 import Carousel from '../../../../Components/Carousel';
-// import { Carousel } from 'react-responsive-carousel';
-// import "react-responsive-carousel/lib/styles/carousel.min.css";
+import Typography from '@material-ui/core/Typography';
 
 const TransformationCarousel = props => {
     let images = [];
@@ -9,8 +8,13 @@ const TransformationCarousel = props => {
         images.push(transformation.image);
     });
     return(
-        <Carousel  images={images} />
-    )
+        <>
+            <Typography variant="h4" style={{marginTop: '70px', marginBottom: '25px'}}>
+                Our Results
+            </Typography>
+            <Carousel images={images} />
+        </> 
+    );
 }
 
 export default TransformationCarousel;

@@ -7,6 +7,10 @@ const Image = styled.img`
     height: 300px;
     width: 400px;
     margin-top: 25px;
+    cursor: pointer;
+    &:hover{
+        opacity: 50%;
+    }
 `;
 
 const GalleryRow = props => {

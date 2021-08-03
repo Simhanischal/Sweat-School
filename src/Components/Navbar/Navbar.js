@@ -1,25 +1,52 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
+import Logo from '../../Images/Logo.png';
 import styled from 'styled-components';
 import MenuIcon from '@material-ui/icons/Menu';
 import CloseIcon from '@material-ui/icons/Close';
 import Typography from '@material-ui/core/Typography';
+import { makeStyles } from '@material-ui/core';
 import { useMediaQuery } from 'react-responsive';
-import Logo from '../../Images/Logo.png';
+
+const Nav = styled.nav`
+    position: fixed;  
+    background: #FFFFFF;
+    width: 100%;
+    min-height: 70px;
+    top: 0;
+    z-index: 100;
+    overflow: hidden;
+    box-shadow: 0 3px 6px 0 rgb(0 0 0 / 15%);
+`;
 
 const Bar = styled.ul`
     margin-top: 0;
-    list-style-type: none;
-    overflow: hidden;
-    position: ${props => props.position || "static"};
+    ${'' /* overflow: hidden; */}
+    list-style-type: none;  
+    @media screen and (max-width: 800px){
+        overflow: hidden;
+    }
+    ${'' /* position: ${props => props.position || "static"}; */}
 `;
 
 const NavHome = styled.li`
     float: left;
+    ${'' /* margin-top: 0; */}
+    ${'' /* @media screen and (max-width: 800px){
+        position: absolute;
+        top: 0;
+    } */}
 `;
 
 const NavLogo = styled.img`
-    height: ${props => props.display === "mobile"? "50px": "100px"};
+    ${'' /* margin-top: -60px; */}
+    ${'' /* margin-top: 0; */}
+    height: ${props => props.display === "mobile"? "50px": "70px"};
+    @media screen and (max-width: 800px){
+        position: absolute;
+        top: 10px;
+    }
 `;
 
 const NavLink = styled.li`
@@ -34,10 +61,18 @@ const NavMenu = styled.div`
     display: ${props => props.display || "none"};
     position: absolute;
     right: 0;
-    top: 10px;
+    top: 20px;
 `;
 
+const useStyles = makeStyles({
+    link: {
+        textDecoration: 'none',
+    },
+});
+
 const Navbar = () => {
+    const classes = useStyles();
+
     const [display, setDisplay] = useState("none");
 
     const menuClickHandler = () => {
@@ -46,7 +81,7 @@ const Navbar = () => {
     }
 
     const desktopView = 
-            <nav>
+            <Nav>
                 <Bar>
                     <NavHome>
                         <Link to="/">
@@ -55,28 +90,30 @@ const Navbar = () => {
                     </NavHome> 
                     <NavLink>
                         <Typography variant="body1">
-                            <Link to="/about">About Us</Link>
+                            <Link to="/about" className={classes.link}>About Us</Link>
                         </Typography>
                     </NavLink>
                     <NavLink>
                         <Typography variant="body1">
-                            <Link to="/gallery">Gallery</Link>
+                            <Link to="/gallery" className={classes.link}>Gallery</Link>
                         </Typography>
                     </NavLink>
                     <NavLink>
                         <Typography variant="body1">
-                            <Link to="/transformations">Transformations</Link>
+                            <Link to="/transformations" className={classes.link}>Transformations</Link>
                         </Typography>    
                     </NavLink>
                     <NavLink>
-                        <Typography variant="body1">Training Programs</Typography>
+                        <Typography variant="body1">
+                            <HashLink to="/#trainings" className={classes.link}>Training Programs</HashLink>
+                        </Typography>
                     </NavLink>
                     <NavMenu />
                 </Bar>
-            </nav>;
+            </Nav>;
 
     const mobileView = 
-            <nav>
+            <Nav>
                 <Bar position="relative">
                     <NavHome>
                         <Link to="/">
@@ -85,22 +122,22 @@ const Navbar = () => {
                     </NavHome>
                     <NavLink float="none" textAlign="left" display={display} style={{marginTop: '55px'}}>
                         <Typography variant="body1">
-                            <Link>Training Programs</Link>
+                            <HashLink to="/#trainings" className={classes.link}>Training Programs</HashLink>
                         </Typography>
                     </NavLink>
                     <NavLink float="none" textAlign="left" display={display}>
                         <Typography variant="body1">
-                            <Link to="/transformations">Transformations</Link>
+                            <Link to="/transformations" className={classes.link}>Transformations</Link>
                         </Typography>    
                     </NavLink>
                     <NavLink float="none" textAlign="left" display={display}>
                         <Typography variant="body1">
-                            <Link to="/gallery">Gallery</Link>
+                            <Link to="/gallery" className={classes.link}>Gallery</Link>
                         </Typography>
                     </NavLink>
                     <NavLink float="none" textAlign="left" display={display}>
                         <Typography variant="body1">
-                            <Link to="/about">About Us</Link>
+                            <Link to="/about" className={classes.link}>About Us</Link>
                         </Typography>
                     </NavLink>
                     <NavMenu display="block" onClick={menuClickHandler}>
@@ -109,7 +146,7 @@ const Navbar = () => {
                         }
                     </NavMenu>
                 </Bar>
-            </nav>;
+            </Nav>;
 
     const isDesktop = useMediaQuery({ query: '(min-device-width: 1224px)' });
 

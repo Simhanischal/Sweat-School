@@ -3,6 +3,7 @@ import { useSwipeable } from 'react-swipeable';
 import styled from 'styled-components';
 import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
+import { Link } from 'react-router-dom';
 
 const ImageContainer = styled.div`
     margin: 0 auto;
@@ -22,8 +23,11 @@ const ButtonIcon = styled.button`
 `;
 
 const CarouselImage = styled.img`
-    width: 400px;
+    width: 600px;
     height: 400px;
+    @media screen and (max-width: 800px){
+        width: 400px;
+    }
 `;
 
 const Carousel = props => {
@@ -55,20 +59,32 @@ const Carousel = props => {
         trackMouse: true
     });
 
+    // setTimeout(()=>{
+    //     handleRightArrow();
+    // },3000);
+
+    // useEffect(() => {
+    //     return () => {
+    //         clearTimeout();
+    //     }
+    // })
+
     return(
         <div {...handlers}>  
             <ImageContainer>
-                <CarouselImage alt="CarouselImg" src={images[pointer]} />
+                <Link to="/transformations">
+                    <CarouselImage alt="CarouselImg" src={images[pointer]} />
+                </Link>
             </ImageContainer>
-            <IconContainer>
-                <ButtonIcon onClick={handleLeftArrow} >
+            <IconContainer style={{marginTop: '30px', marginLeft: '20px'}}>
+                <ButtonIcon onClick={handleLeftArrow} style={{marginRight: '10px'}}>
                     <ArrowBackIcon 
                         color="primary" 
                         style={{fontSize: "40", cursor: "pointer"}}          
                     />
                 </ButtonIcon>
-                &nbsp;&nbsp;&nbsp;
-                <ButtonIcon onClick={handleRightArrow} >
+                {/* &nbsp;&nbsp;&nbsp; */}
+                <ButtonIcon onClick={handleRightArrow} style={{marginLeft: '18px'}}>
                     <ArrowForwardIcon 
                         color="primary" 
                         style={{fontSize: "40", cursor: "pointer"}}        

@@ -8,7 +8,7 @@ import { HomeGalleryData } from '../../Data/GalleryData';
 
 const Home = () => {
     return (
-        <div>
+        <div style={{marginTop: '100px',}}>
             <UniqueFeatures />
             <TrainingPrograms />
             <TransformationCarousel homeTransformation={HomeTransformation} />

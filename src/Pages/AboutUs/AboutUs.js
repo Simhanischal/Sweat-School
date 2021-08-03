@@ -1,13 +1,11 @@
 import React from 'react';
 import styled from 'styled-components'; 
 import FounderAvatar from './Components/FounderAvatar';
-import MediaIcons from './Components/MediaIcons';
-// import AnoopAvatar from '../../Images/AnoopAvatar.PNG';
-// import TilakAvatar from '../../Images/TilakAvatar.PNG';
 import { AboutUsData } from '../../Data/AboutUsData';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import InstagramIcon from '@material-ui/icons/Instagram';
+import GoogleMap from './Components/GoogleMap';
 
 const Description = styled.div`
     text-align: left;
@@ -20,8 +18,7 @@ const Description = styled.div`
     }
 `;
 
-const Anoop = AboutUsData[0];
-const Tilak = AboutUsData[1];
+const [Anoop, Tilak] = AboutUsData;
 
 const AboutUs = () => {
     return(
@@ -57,7 +54,7 @@ const AboutUs = () => {
                     </Description>
                 </Grid>
             </Grid>
-            <MediaIcons />
+            <GoogleMap />
         </>
     );
 }
