@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Logo from '../../Images/Logo.png';
+import { HashLink } from 'react-router-hash-link';
 import styled from 'styled-components';
 import { makeStyles } from '@material-ui/core';
 import Grid from '@material-ui/core/Grid';
@@ -37,6 +38,7 @@ const CopyrightDivider = styled.div`
 const useStyles = makeStyles({
     link:{
         textDecoration: 'none',
+        color: '#000000',
         '&:hover':{
             textDecoration: 'underline',
         },
@@ -77,9 +79,9 @@ const Footer = () => {
                         Quick Links
                     </Typography>
                     <FooterDivider />
-                    {/* <Typography variant="body1">
-                        <Link to="/home#trainings" className={classes.link}>Training Programs</Link>
-                    </Typography> */}
+                    <Typography variant="body1">
+                        <HashLink to="/home#trainings" className={classes.link}>Training Programs</HashLink>
+                    </Typography>
                     <Typography variant="body1">
                         <Link to="/transformations" className={classes.link}>Transformations</Link>
                     </Typography>

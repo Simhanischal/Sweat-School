@@ -5,14 +5,14 @@ import GalleryRow from './Components/GalleryRow';
 
 const Gallery = () => {
     return(
-        <>
+        <div style={{marginTop: '100px'}}>
             <Typography variant="h3" style={{textDecoration: 'underline'}}>
                 Gallery 
             </Typography>
             {
                 PageGallery.map((row) => <GalleryRow key={row[2].id} imageRow={row}/>)
             }
-        </>
+        </div>
     );
 }
 

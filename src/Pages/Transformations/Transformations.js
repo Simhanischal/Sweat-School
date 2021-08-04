@@ -16,7 +16,7 @@ const LineDivider = styled.div`
 
 const Transformations = () => {
     return(
-        <>
+        <div style={{marginTop: '100px'}}>
             <Typography variant="h3" style={{textDecoration: 'underline'}}>
                 Transformations 
             </Typography>
@@ -36,7 +36,7 @@ const Transformations = () => {
                     )
                 })
             }
-        </>
+        </div>
     );
 }
 

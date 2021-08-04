@@ -67,6 +67,7 @@ const NavMenu = styled.div`
 const useStyles = makeStyles({
     link: {
         textDecoration: 'none',
+        color: '#000000',
     },
 });
 

@@ -22,7 +22,7 @@ const [Anoop, Tilak] = AboutUsData;
 
 const AboutUs = () => {
     return(
-        <>
+        <div style={{marginTop: '100px'}}>
             <Typography variant="h3" style={{textDecoration: 'underline', marginBottom: '50px'}}>
                 Our Team
             </Typography>
@@ -55,7 +55,7 @@ const AboutUs = () => {
                 </Grid>
             </Grid>
             <GoogleMap />
-        </>
+        </div>
     );
 }
 
