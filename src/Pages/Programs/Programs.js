@@ -31,7 +31,7 @@ const useStyles = makeStyles({
     },
     button: {
         textAlign: 'left',
-        marginTop: '10px',
+        marginTop: '30px',
         '@media screen and (max-width: 800px)':{
             marginTop: '40px',
             marginBottom: '-20px',
@@ -72,8 +72,10 @@ const Programs = () => {
                     </Typography>
                     <Typography className={classes.caption}>
                         {
-                            program.benefits.map((benefit) => {
-                                return <span> {benefit} |</span>
+                            program.benefits.map((benefit, index) => {
+                                if(index !== program.benefits.length - 1)
+                                    return <span key={benefit}> {benefit} | </span>;
+                                return <span key={benefit}> {benefit} </span>;
                             })
                         }
                     </Typography>
@@ -83,8 +85,10 @@ const Programs = () => {
                     </Typography>
                     <Typography className={classes.caption}>
                         {
-                            program.popularWorkouts.map((benefit) => {
-                                return <span> {benefit} |</span>
+                            program.popularWorkouts.map((workout, index) => {
+                                if(index !== program.popularWorkouts.length - 1)
+                                    return <span key={workout}> {workout} |</span>;
+                                return <span key={workout}> {workout} </span>;
                             })
                         }
                     </Typography>

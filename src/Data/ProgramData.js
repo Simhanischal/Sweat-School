@@ -12,7 +12,7 @@ export const PagePrograms = [
         popularWorkouts: ['Squat', 'Deadlift', 'Muscle Up', 'Burpee', 'Farmers Walk'],
         workoutsCapsule: ['Deadlift', 'Muscle Up'],
         benefits: ['Improves Posture', 'Improves Balance', 'Builds Functional Muscle', 
-                   'Reduces Injury Risk'],
+                   'Reduces Injury'],
         benefitsCapsule: ['Posture', 'Balance'],
     },
     {
@@ -24,7 +24,7 @@ export const PagePrograms = [
                       `,
         popularWorkouts: ['L-Sit', 'Pull Up', 'Pistol Squat', 'Hand Stand', 'Hanging Leg Raises'],
         workoutsCapsule: ['L-Sit', 'Pistol Squat'],
-        benefits: ['Improves Mobility', 'Burns Fat', 'Reduces Injury Risk', 'Requires No/Less Equipment'],
+        benefits: ['Improves Mobility', 'Burns Fat', 'Reduces Injury', 'Requires No/Less Equipment'],
         benefitsCapsule: ['Mobility', 'Fat Burn'],
     },
     {
@@ -32,11 +32,9 @@ export const PagePrograms = [
         name: 'Animal Flow',
         image: AnimalFlow,
         description: 'Animal Flow is ground based movement, made fun, challenging and effective',
-        popularWorkouts: ['Loaded Beast', 'Scorpion Reach', 'Travelling Crab',
-                          'Deep Ape to Side Kick Through', 'Crab to Underswitch Taps'],
+        popularWorkouts: ['Loaded Beast', 'Scorpion Reach', 'Travelling Crab', 'Crab to Underswitch Taps'],
         workoutsCapsule: ['Loaded Beast', 'Scorpion Reach'],
-        benefits: ['Improves Stability', 'Improves Co-ordination', 'Helps Gain Strength', 
-                   'Requires no/less equipment'],
+        benefits: ['Improves Stability', 'Improves Co-ordination', 'Helps Gain Strength',],
         benefitsCapsule: ['Stability', 'Strength'],
     },
 ];
@@ -46,18 +44,15 @@ export const HomePrograms = [
         id: 0,
         name: 'Functional Training',
         image: Functional,
-        description: 'Functional descripton here',
     },
     {
         id: 1,
         name: 'Calisthenics',
         image: Calisthenics,
-        description: 'Calisthenics descripton here',
     },
     {
         id: 2,
         name: 'Animal Flow',
         image: AnimalFlow,
-        description: 'Animal Flow descripton here',
     },
 ];

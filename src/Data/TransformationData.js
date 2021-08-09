@@ -25,7 +25,7 @@ export const TransformationData = [
         {
             "id": 0,
             "name": "Your Name",
-            "description": "We have an empty top spot and would like to have your transformation story here!",
+            "description": '"We have an empty top spot and would like to have your transformation story here!"',
             "image": AvatarImage,
             "readMore": false,
         },
