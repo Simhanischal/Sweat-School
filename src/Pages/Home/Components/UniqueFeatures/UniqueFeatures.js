@@ -10,7 +10,7 @@ import HighQualityIcon from '@material-ui/icons/HighQuality';
 const UniqueFeatures = () => {
     return (
         <div>
-            <Typography variant="h4" style={{marginBottom: '25px'}}>Our Unique Features</Typography>
+            <Typography variant="h4" style={{marginTop: '70px', marginBottom: '25px'}}>Our Unique Features</Typography>
             <Grid container justify="space-around" direction="row">
                 <Grid item xs={12} md={2}>
                     <CardWithImage 

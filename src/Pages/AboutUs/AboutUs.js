@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components'; 
 import FounderAvatar from './Components/FounderAvatar';
 import { AboutUsData } from '../../Data/AboutUsData';
@@ -35,7 +36,13 @@ const AboutUs = () => {
                     <Typography variant="h4">{Anoop.name}</Typography>
                     <Typography variant="subtitle1">{Anoop.designation}</Typography>
                     <FounderAvatar name="Anoop" image={Anoop.image} />
-                    <InstagramIcon color="secondary" style={{fontSize: 35, cursor: 'pointer', marginTop: '15px'}} /> 
+                    <Link
+                        to={{pathname: Anoop.insta}}
+                        target="_blank">
+                            <InstagramIcon 
+                                color="secondary" 
+                                style={{fontSize: 35, cursor: 'pointer', marginTop: '15px'}} /> 
+                    </Link>
                     <Description>
                         <Typography variant="subtitle2" style={{fontSize: 17}}>
                             {Anoop.description}
@@ -46,7 +53,13 @@ const AboutUs = () => {
                     <Typography variant="h4">{Tilak.name}</Typography>
                     <Typography variant="subtitle1">{Tilak.designation}</Typography>
                     <FounderAvatar name="Tilak" image={Tilak.image} />
-                    <InstagramIcon color="secondary" style={{fontSize: 35, cursor: 'pointer', marginTop: '15px'}} /> 
+                    <Link
+                        to={{pathname: Tilak.insta}}
+                        target="_blank">
+                            <InstagramIcon 
+                                color="secondary" 
+                                style={{fontSize: 35, cursor: 'pointer', marginTop: '15px'}} /> 
+                    </Link> 
                     <Description>
                         <Typography variant="subtitle2" style={{fontSize: 17}}>
                             {Tilak.description}

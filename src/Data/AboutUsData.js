@@ -7,6 +7,7 @@ export const AboutUsData = [
         name: 'Anoop Kumar',
         designation: 'Founder, CEO, and Instructor',
         image: AnoopAvatar,
+        insta: `https://www.instagram.com/anoop_28_/?hl=en`,
         description: `Anoop is a graduate from Acharya University, Bengaluru where he studied 
                       Civil Engineering. After graduating  in May 2019, with no interest in Civil
                       Engineering and no desire to work in any corporate job, he just started fitness
@@ -23,6 +24,7 @@ export const AboutUsData = [
         name: 'Tilak R',
         designation: 'Co-founder and Instructor',
         image: TilakAvatar,
+        insta: `https://www.instagram.com/tilak_ramachandra/?hl=en`,
         description: `Tilak is a Mechatronics graduate from Acharya University and also a close friend 
                       of Anoop. He was an athlete from a very young age winning gold medals for his 
                       school and zone in sprint races. He developed a passion towards fitness during 

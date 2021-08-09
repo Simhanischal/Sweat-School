@@ -12,18 +12,22 @@ const Image = styled.img`
     height: 450px;
     border: 2px solid #000000;
     @media screen and (max-width: 800px){
-        width: 600px;
+        ${'' /* width: 400px; */}
+        width: 100vw;
     }
 `;
 const Details = styled.div`
     margin: 0 auto;
     text-align: left;
-    width: 600px;
+    ${'' /* width: 600px; */}
     padding: 5px 15px;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
     transition: 0.3s;
     &:hover{
         box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    }
+    @media screen and (max-width: 800px){
+        padding: 0;
     }
 `;
 
@@ -61,13 +65,13 @@ const Transformation = props => {
     }
     return(
         <>
-            <Grid container>
+            <Grid container direction="row" justify="center">
                 <Grid item xs={12} md={6}>
-                        {
-                            props.name === "Your Name"
-                            ?<img alt="Transformation Item" src={props.image} width="200" height="200" />
-                            :<Image alt="Transformation Item" src={props.image} />
-                        }
+                    {
+                        props.name === "Your Name"
+                        ?<img alt="Your Transformation" src={props.image} width="200" />
+                        :<Image alt="Transformation Item" src={props.image} />
+                    }
                 </Grid>
                 <Grid item xs={12} md={6}>
                     <Details>

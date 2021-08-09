@@ -4,8 +4,9 @@ import Map from '../../../../Images/Map.png';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 
-const mapLink = `https://www.google.com/maps/place/Sweat+School/@12.9892198,77.5398329,15z/
-                 data=!4m5!3m4!1s0x0:0x41fbf799884a8a54!8m2!3d12.9892361!4d77.5398326`;
+const mapLink = `https://www.google.com/maps/dir//Sweat+School,+Chord+Rd,+West+Of+Chord+Road,+West+of+Chord+Road+
+                 3rd+Stage,+Basaveshwar+Nagar,+Bengaluru,+Karnataka/@12.9893011,77.5048132,13z/data=
+                 !4m9!4m8!1m0!1m5!1m1!1s0x3bae3d3070611cbd:0x41fbf799884a8a54!2m2!1d77.5398326!2d12.9892361!3e0`;
 
 const GoogleMap = () => {
     return(
@@ -21,6 +22,7 @@ const GoogleMap = () => {
                 <Grid item>
                     <Link
                         to={{pathname: mapLink}}
+                        target="_blank"
                     >
                         <img alt="Google Map" src={Map} width="500"/>
                     </Link>

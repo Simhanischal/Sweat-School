@@ -53,11 +53,20 @@ const useStyles = makeStyles({
     },
 });
 
+const footerInstaLink = "https://www.instagram.com/sweat__school/?hl=en";
+
+const footerWhatsAppLink = `https://wa.me/919535580772?text=I%20want%20to%20start%20my%20fitness%20journey.%20
+                            Can%20you%20please%20guide%20me%20?`;
+
+const footerMapsLink = `https://www.google.com/maps/dir//Sweat+School,+Chord+Rd,+West+Of+Chord+Road,+West+of+Chord+Road+
+                        3rd+Stage,+Basaveshwar+Nagar,+Bengaluru,+Karnataka/@12.9893011,77.5048132,13z/data=
+                        !4m9!4m8!1m0!1m5!1m1!1s0x3bae3d3070611cbd:0x41fbf799884a8a54!2m2!1d77.5398326!2d12.9892361!3e0`;
+
 const Footer = () => {
     const classes = useStyles();
     return(
-        <div style={{marginTop: '70px', borderTop: '2px solid #000000'}}>
-            <Grid container direction="row" justify="space-around">
+        <div style={{marginTop: '70px', borderTop: '2px solid #000000',}}>
+            <Grid container direction="row" justify="space-around" spacing={2}>
                 <Grid item xs={12} md={3}>
                     <FooterLogo alt="Footer Logo" src={Logo} />
                     <Typography variant="body2" style={{textAlign: 'left'}}>
@@ -66,7 +75,7 @@ const Footer = () => {
                     </Typography>
                     <Button variant="contained" size="small" className={classes.button}>
                         <Link 
-                            to={{pathname: "https://www.google.com/maps/place/Sweat+School/@12.9892198,77.5398329,15z/data=!4m5!3m4!1s0x0:0x41fbf799884a8a54!8m2!3d12.9892361!4d77.5398326"}}
+                            to={{pathname: footerMapsLink}}
                             target="_blank"
                             className={classes.link}
                             >
@@ -98,19 +107,19 @@ const Footer = () => {
                     </Typography>
                     <FooterDivider />
                     <Link 
-                        to={{pathname: "https://www.instagram.com/sweat__school/?hl=en"}} 
+                        to={{pathname: footerInstaLink}} 
                         target="_blank">
                             <InstagramIcon color="secondary" style={{fontSize: 35, paddingRight: 10,}} /> 
                     </Link>
                     
                     <Link 
-                        to={{pathname: "https://www.instagram.com/sweat__school/?hl=en"}} 
+                        to={{pathname: footerInstaLink}} 
                         target="_blank">
                             <FacebookIcon color="primary" style={{fontSize: 35, paddingRight: 10,}} />
                     </Link>
 
                     <Link 
-                        to={{pathname: "https://wa.me/919535580772?text=I%20want%20to%20enroll%20in%20a%20program.%20Can%20you%20provide%20me%20some%20more%20details?"}} 
+                        to={{pathname: footerWhatsAppLink}} 
                         target="_blank">
                             <WhatsAppIcon style={{color: green[500],fontSize: 35, paddingRight: 10,}}/>
                     </Link>

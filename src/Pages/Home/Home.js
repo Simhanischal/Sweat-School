@@ -5,10 +5,12 @@ import TransformationCarousel from './Components/TransformationCarousel';
 import HomeGallery from './Components/HomeGallery';
 import { HomeTransformation } from '../../Data/TransformationData';
 import { HomeGalleryData } from '../../Data/GalleryData';
+import Landing from './Components/Landing/Landing';
 
 const Home = () => {
     return (
-        <div style={{marginTop: '100px',}}>
+        <div style={{marginTop: '100px'}}>
+            <Landing />
             <UniqueFeatures />
             <TrainingPrograms />
             <TransformationCarousel homeTransformation={HomeTransformation} />

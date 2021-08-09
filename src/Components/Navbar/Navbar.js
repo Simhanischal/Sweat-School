@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 import Logo from '../../Images/Logo.png';
 import styled from 'styled-components';
@@ -14,10 +14,13 @@ const Nav = styled.nav`
     background: #FFFFFF;
     width: 100%;
     min-height: 70px;
-    top: 0;
+    top: 0px;
     z-index: 100;
     overflow: hidden;
     box-shadow: 0 3px 6px 0 rgb(0 0 0 / 15%);
+    @media screen and (max-width: 800px){
+        ${'' /* margin-bottom: ${props => props.display === "block" && "70px"}; */}
+    }
 `;
 
 const Bar = styled.ul`
@@ -81,6 +84,13 @@ const Navbar = () => {
         else setDisplay("block");
     }
 
+    const { pathname } = useLocation();
+
+    //close the opened navbar menu in mobile displays whenever the app is navigated to a different page
+    useEffect(() => {
+        setDisplay("none");
+    }, [pathname]);
+
     const desktopView = 
             <Nav>
                 <Bar>
@@ -114,7 +124,7 @@ const Navbar = () => {
             </Nav>;
 
     const mobileView = 
-            <Nav>
+            <Nav display={display}>
                 <Bar position="relative">
                     <NavHome>
                         <Link to="/">
@@ -149,7 +159,7 @@ const Navbar = () => {
                 </Bar>
             </Nav>;
 
-    const isDesktop = useMediaQuery({ query: '(min-device-width: 1224px)' });
+    const isDesktop = useMediaQuery({ query: '(min-device-width: 800px)' });
 
     return(
         <React.Fragment>

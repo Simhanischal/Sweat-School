@@ -15,7 +15,8 @@ const useStyles = makeStyles({
 });
 
 function WhatsappLink() {
-    const link = "https://wa.me/919535580772?text=I%20want%20to%20enroll%20in%20a%20program.%20Can%20you%20provide%20me%20some%20more%20details?"
+    const link = `https://wa.me/919535580772?text=I%20want%20to%20start%20my%20fitness%20journey.%20
+                  Can%20you%20please%20guide%20me%20?`
     const classes = useStyles();
     return (
         <div>
