@@ -2,11 +2,30 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import CardWithImage from '../../../../Components/CardWithImage';
 import { HomePrograms } from '../../../../Data/ProgramData';
+import { makeStyles } from '@material-ui/core';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
 
 const [Functional, Calisthenics, AnimalFlow] = HomePrograms;
+
+const useStyles = makeStyles({
+    heading: {
+        marginTop: '70px', 
+        marginBottom: '25px',
+    },
+    program: {
+        '@media screen and (max-width: 800px)': {
+            marginTop: '50px',
+        },
+    },
+    button: {
+        marginLeft: 'auto', 
+        marginRight: 'auto', 
+        marginTop: '-20px', 
+        textDecoration: 'none',
+    }
+});
 
 const button = <Button 
                 color="primary" 
@@ -15,17 +34,19 @@ const button = <Button
                </Button>;
 
 const LinkButton = (props) => {
+    const classes = useStyles();
     return <Link 
-            style={{margin: "auto", textDecoration: 'none'}} 
+            className={classes.button}
             to={`/trainings/${props.program}`}>
                 {button}
            </Link>;
 }
 
 const TrainingPrograms = () => {
+    const classes = useStyles();
     return(
         <div id="trainings">
-            <Typography variant="h4" style={{marginTop: '70px', marginBottom: '25px'}}>
+            <Typography variant="h4" className={classes.heading}>
                 Our Training Programs
             </Typography>
 
@@ -39,7 +60,7 @@ const TrainingPrograms = () => {
                         button={<LinkButton program='calisthenics' />}
                     />
                 </Grid>
-                <Grid item xs={12} md={3}>
+                <Grid item xs={12} md={3} className={classes.program}>
                     <CardWithImage 
                         name={Functional.name}
                         image={Functional.image}
@@ -48,7 +69,7 @@ const TrainingPrograms = () => {
                         button={<LinkButton program='functional' />}
                     />
                 </Grid>
-                <Grid item xs={12} md={3}>
+                <Grid item xs={12} md={3} className={classes.program}>
                     <CardWithImage 
                         name={AnimalFlow.name}
                         image={AnimalFlow.image}

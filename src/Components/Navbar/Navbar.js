@@ -45,10 +45,10 @@ const NavHome = styled.li`
 const NavLogo = styled.img`
     ${'' /* margin-top: -60px; */}
     ${'' /* margin-top: 0; */}
-    height: ${props => props.display === "mobile"? "50px": "70px"};
+    height: ${props => props.display === "mobile"? "60px": "70px"};
     @media screen and (max-width: 800px){
         position: absolute;
-        top: 10px;
+        top: 5px;
     }
 `;
 
@@ -72,6 +72,10 @@ const useStyles = makeStyles({
         textDecoration: 'none',
         color: '#000000',
     },
+    icon: {
+        fontSize: '40px',
+        marginTop: '-5px',
+    }
 });
 
 const Navbar = () => {
@@ -131,7 +135,7 @@ const Navbar = () => {
                             <NavLogo alt="logo" src={Logo} display="mobile" />
                         </Link>
                     </NavHome>
-                    <NavLink float="none" textAlign="left" display={display} style={{marginTop: '55px'}}>
+                    <NavLink float="none" textAlign="left" display={display} style={{marginTop: '60px'}}>
                         <Typography variant="body1">
                             <HashLink to="/#trainings" className={classes.link}>Training Programs</HashLink>
                         </Typography>
@@ -153,7 +157,9 @@ const Navbar = () => {
                     </NavLink>
                     <NavMenu display="block" onClick={menuClickHandler}>
                         {
-                            display==="none"? <MenuIcon />: <CloseIcon />
+                            display==="none"
+                            ? <MenuIcon className={classes.icon} />
+                            : <CloseIcon className={classes.icon} />
                         }
                     </NavMenu>
                 </Bar>
