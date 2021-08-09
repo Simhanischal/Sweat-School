@@ -17,7 +17,7 @@ import Home from './Pages/Home/Home';
 // import TrainingPrograms from './Pages/Home/Components/TrainingPrograms';
 // import UniqueFeatures from './Pages/Home/Components/UniqueFeatures';
 import WhatsappLink from './Components/WhatsappLink/WhatsappLink';
-import ProgramDetails from './Pages/Programs/Components/ProgramDetails';
+import Programs from './Pages/Programs/Programs';
 
 function App() {
   return (
@@ -32,7 +32,7 @@ function App() {
             <Gallery />
           </Route>
           <Route path="/trainings/:selectedProgram">
-            <ProgramDetails />
+            <Programs />
           </Route>
           <Route path="/transformations">
             <Transformations />
