@@ -45,8 +45,8 @@ const LinkButton = (props) => {
 const TrainingPrograms = () => {
     const classes = useStyles();
     return(
-        <div id="trainings">
-            <Typography variant="h4" className={classes.heading}>
+        <div >
+            <Typography id="trainings" variant="h4" className={classes.heading}>
                 Our Training Programs
             </Typography>
 

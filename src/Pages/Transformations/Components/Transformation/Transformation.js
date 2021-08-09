@@ -35,6 +35,7 @@ const Details = styled.div`
 const useStyles = makeStyles({
     button: {
         marginTop: '10px',
+        marginBottom: '10px',
     },
     link: {
         textDecoration: 'none',
@@ -93,18 +94,18 @@ const Transformation = props => {
                             className={readMore? classes.showDetails: classes.hideDetails}
                         >
                             {props.description}
-                            {props.name === "Your Name" && 
-                                <Link 
-                                    className={classes.link} 
-                                    to={{pathname: transformationWhatsappLink}}
-                                    target="_blank"
-                                >
-                                    <Button variant="contained" color="primary" className={classes.button}>
-                                        Start My Transformation
-                                    </Button>
-                                </Link>
-                            }
                         </Typography>
+                        {props.name === "Your Name" && 
+                            <Link 
+                                className={classes.link} 
+                                to={{pathname: transformationWhatsappLink}}
+                                target="_blank"
+                            >
+                                <Button variant="contained" color="primary" className={classes.button}>
+                                    Start My Transformation
+                                </Button>
+                            </Link>
+                        }
                         <Button 
                             className={props.readMore? classes.readMoreVisible: classes.readMoreInvisible}
                             variant="contained"
