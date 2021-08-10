@@ -23,7 +23,7 @@ const useStyles = makeStyles({
         textDecoration: 'underline',
     },
     transformation: {
-        marginTop: '25px', 
+        marginTop: '50px',
     },
 });
 
@@ -44,7 +44,7 @@ const Transformations = () => {
                                 description={transformation.description}
                                 readMore={transformation.readMore}
                             />
-                            <LineDivider />
+                            {/* <LineDivider /> */}
                         </div>
                     )
                 })
