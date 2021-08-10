@@ -142,7 +142,7 @@ const Footer = () => {
                             <WhatsAppIcon className={classes.waIcon} />
                     </Link>
                     <Typography>
-                        Mob: +91-9585530772
+                        Mob: +91-9535580772
                     </Typography>
                 </Grid>
             </Grid>
