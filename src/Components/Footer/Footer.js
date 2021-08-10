@@ -10,7 +10,6 @@ import Button from '@material-ui/core/Button';
 import InstagramIcon from '@material-ui/icons/Instagram';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import WhatsAppIcon from '@material-ui/icons/WhatsApp';
-import { green } from '@material-ui/core/colors';
 
 const FooterLogo = styled.img`
     height: 70px;
@@ -36,6 +35,10 @@ const CopyrightDivider = styled.div`
 `;
 
 const useStyles = makeStyles({
+    container: {
+        marginTop: '70px', 
+        borderTop: '2px solid #000000',
+    },
     link:{
         textDecoration: 'none',
         color: '#000000',
@@ -51,6 +54,21 @@ const useStyles = makeStyles({
         fontSize: '11px',
         marginTop: '5px'
     },
+    address: {
+        textAlign: 'left',
+        '@media screen and (max-width: 800px)':{
+            marginLeft: '20px',
+        },
+    },
+    icon: {
+        fontSize: '35px', 
+        paddingRight: '10px',
+    },
+    waIcon: {
+        fontSize: '35px', 
+        paddingRight: '10px',
+        color: '#006400',
+    },
 });
 
 const footerInstaLink = "https://www.instagram.com/sweat__school/?hl=en";
@@ -65,11 +83,11 @@ const footerMapsLink = `https://www.google.com/maps/dir//Sweat+School,+Chord+Rd,
 const Footer = () => {
     const classes = useStyles();
     return(
-        <div style={{marginTop: '70px', borderTop: '2px solid #000000',}}>
+        <div className={classes.container}>
             <Grid container direction="row" justify="space-around" spacing={2}>
                 <Grid item xs={12} md={3}>
                     <FooterLogo alt="Footer Logo" src={Logo} />
-                    <Typography variant="body2" style={{textAlign: 'left'}}>
+                    <Typography variant="body2" className={classes.address}>
                         5th Main Road, 354, Chord Rd, West of Chord Road 3rd Stage, 
                         Basaveshwar Nagar, Bengaluru, Karnataka 560079
                     </Typography>
@@ -109,19 +127,19 @@ const Footer = () => {
                     <Link 
                         to={{pathname: footerInstaLink}} 
                         target="_blank">
-                            <InstagramIcon color="secondary" style={{fontSize: 35, paddingRight: 10,}} /> 
+                            <InstagramIcon color="secondary" className={classes.icon} /> 
                     </Link>
                     
                     <Link 
                         to={{pathname: footerInstaLink}} 
                         target="_blank">
-                            <FacebookIcon color="primary" style={{fontSize: 35, paddingRight: 10,}} />
+                            <FacebookIcon color="primary" className={classes.icon} />
                     </Link>
 
                     <Link 
                         to={{pathname: footerWhatsAppLink}} 
                         target="_blank">
-                            <WhatsAppIcon style={{color: green[500],fontSize: 35, paddingRight: 10,}}/>
+                            <WhatsAppIcon className={classes.waIcon} />
                     </Link>
                     <Typography>
                         Mob: +91-9585530772

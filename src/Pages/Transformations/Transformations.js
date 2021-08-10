@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { TransformationData } from '../../Data/TransformationData';
 import Transformation from './Components/Transformation';
+import { makeStyles } from '@material-ui/core';
 import Typography from '@material-ui/core/Typography';
 
 const LineDivider = styled.div`
@@ -14,18 +15,30 @@ const LineDivider = styled.div`
     }
 `;
 
+const useStyles = makeStyles({
+    container: {
+        marginTop: '100px',
+    },
+    heading: {
+        textDecoration: 'underline',
+    },
+    transformation: {
+        marginTop: '25px', 
+    },
+});
+
 const Transformations = () => {
+    const classes = useStyles();
     return(
-        <div style={{marginTop: '100px'}}>
-            <Typography variant="h3" style={{textDecoration: 'underline'}}>
+        <div className={classes.container}>
+            <Typography variant="h3" className={classes.heading}>
                 Transformations 
             </Typography>
             {
                 TransformationData.map((transformation) => {
                     return(
-                        <div style={{marginTop: '25px'}}>
+                        <div className={classes.transformation} key={transformation.id}>
                             <Transformation 
-                                key={transformation.id}
                                 image={transformation.image} 
                                 name={transformation.name} 
                                 description={transformation.description}

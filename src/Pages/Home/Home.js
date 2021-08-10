@@ -6,10 +6,18 @@ import HomeGallery from './Components/HomeGallery';
 import { HomeTransformation } from '../../Data/TransformationData';
 import { HomeGalleryData } from '../../Data/GalleryData';
 import Landing from './Components/Landing/Landing';
+import { makeStyles } from '@material-ui/core';
+
+const useStyles = makeStyles({
+    container: {
+        marginTop: '100px',
+    },
+});
 
 const Home = () => {
+    const classes = useStyles();
     return (
-        <div style={{marginTop: '100px'}}>
+        <div className={classes.container}>
             <Landing />
             <UniqueFeatures />
             <TrainingPrograms />

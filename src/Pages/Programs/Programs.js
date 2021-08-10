@@ -41,6 +41,9 @@ const useStyles = makeStyles({
     link: {
         textDecoration: 'none',
         color: '#FFFFFF',
+        '@media screen and (max-width: 800px)':{
+            fontSize: '17px',
+        }
     }
 });
 

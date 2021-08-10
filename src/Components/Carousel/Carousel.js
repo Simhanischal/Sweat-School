@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useSwipeable } from 'react-swipeable';
 import styled from 'styled-components';
+import { makeStyles } from '@material-ui/core';
 import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 import { Link } from 'react-router-dom';
@@ -10,15 +11,20 @@ const ImageContainer = styled.div`
 `;
 
 const IconContainer = styled.div`
-    margin: 0 auto;
+    margin-top: 30px;
+    margin-left: 20px;
 `;
 
 const ButtonIcon = styled.button`
     border-radius: 50%;
     border: 2px solid #FFFFFF;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
+    cursor: pointer;
     &:hover{
         box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    }
+    @media screen and (max-width: 800px){
+        cursor: none;
     }
 `;
 
@@ -30,9 +36,23 @@ const CarouselImage = styled.img`
     }
 `;
 
+const useStyles = makeStyles({
+    icon: {
+        fontSize: '40px',
+    },
+    prevButton: {
+        marginRight: '10px',
+    },
+    nextButton: {
+        marginLeft: '18px',
+    },
+});
+
 const Carousel = props => {
     const [ pointer, setPointer ] = useState(0);
     const images = props.images;
+
+    const classes = useStyles();
     
     const handleLeftArrow = () => {
         if(pointer !== 0){
@@ -76,18 +96,17 @@ const Carousel = props => {
                     <CarouselImage alt="CarouselImg" src={images[pointer]} />
                 </Link>
             </ImageContainer>
-            <IconContainer style={{marginTop: '30px', marginLeft: '20px'}}>
-                <ButtonIcon onClick={handleLeftArrow} style={{marginRight: '10px'}}>
+            <IconContainer>
+                <ButtonIcon onClick={handleLeftArrow} className={classes.prevButton}>
                     <ArrowBackIcon 
                         color="primary" 
-                        style={{fontSize: "40", cursor: "pointer"}}          
+                        className={classes.icon}        
                     />
                 </ButtonIcon>
-                {/* &nbsp;&nbsp;&nbsp; */}
-                <ButtonIcon onClick={handleRightArrow} style={{marginLeft: '18px'}}>
+                <ButtonIcon onClick={handleRightArrow} className={classes.nextButton}>
                     <ArrowForwardIcon 
                         color="primary" 
-                        style={{fontSize: "40", cursor: "pointer"}}        
+                        className={classes.icon}         
                     />
                 </ButtonIcon> 
             </IconContainer>

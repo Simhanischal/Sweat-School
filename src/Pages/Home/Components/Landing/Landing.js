@@ -8,9 +8,6 @@ import { makeStyles } from '@material-ui/styles';
 import { useMediaQuery } from 'react-responsive';
 
 const useStyles = makeStyles({
-    // actionGrid: {
-    //     marginLeft: '100px',
-    // },
     image: {
         width: '400px',
         height: '500px',
@@ -26,7 +23,8 @@ const useStyles = makeStyles({
         marginTop: '20px',
         marginRight: '190px',
         '@media screen and (max-width: 800px)': {
-            margin: '0 auto'
+            margin: '0 auto',
+            fontSize: '17px',
         },
     },
     heading: {
@@ -40,6 +38,15 @@ const useStyles = makeStyles({
         marginLeft: '30px',
         '@media screen and (max-width: 800px)': {
             marginLeft: '10px',
+            marginBottom: '20px',
+        },
+    },
+    description: {
+        marginTop: '10px',
+        textAlign: 'left',
+        marginLeft: '160px',
+        '@media screen and (max-width: 800px)': {
+            marginLeft: '20px',
             marginBottom: '20px',
         },
     },
@@ -61,6 +68,11 @@ const Landing = () => {
                     <Typography variant="h2" className={classes.heading}>Sweat School</Typography>
                     <Typography variant="h5" className={classes.subHeading}>
                         A community for fitness enthusiasts!
+                    </Typography>
+                    <Typography variant="h6" className={classes.description} >
+                        It's time to stop getting scammed by false promises and 
+                        start getting trained by certified professionals with the right knowledge to help reach your 
+                        goal.! 
                     </Typography>
                     <Button variant="contained" color="primary" className={classes.button}>
                         <HashLink to="/#trainings" className={classes.link}>

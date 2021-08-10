@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components'; 
 import FounderAvatar from './Components/FounderAvatar';
 import { AboutUsData } from '../../Data/AboutUsData';
+import { makeStyles } from '@material-ui/core';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import InstagramIcon from '@material-ui/icons/Instagram';
@@ -19,12 +20,31 @@ const Description = styled.div`
     }
 `;
 
+const useStyles = makeStyles({
+    container: {
+        marginTop: '100px',
+    },
+    heading: {
+        textDecoration: 'underline', 
+        marginBottom: '50px',
+    },
+    description: {
+        fontSize: '17px',
+    },
+    icon: {
+        fontSize: '35px', 
+        cursor: 'pointer', 
+        marginTop: '15px',
+    },
+});
+
 const [Anoop, Tilak] = AboutUsData;
 
 const AboutUs = () => {
+    const classes = useStyles();
     return(
-        <div style={{marginTop: '100px'}}>
-            <Typography variant="h3" style={{textDecoration: 'underline', marginBottom: '50px'}}>
+        <div className={classes.container}>
+            <Typography variant="h3" className={classes.heading}>
                 Our Team
             </Typography>
             <Grid
@@ -41,10 +61,10 @@ const AboutUs = () => {
                         target="_blank">
                             <InstagramIcon 
                                 color="secondary" 
-                                style={{fontSize: 35, cursor: 'pointer', marginTop: '15px'}} /> 
+                                className={classes.iconicon} /> 
                     </Link>
                     <Description>
-                        <Typography variant="subtitle2" style={{fontSize: 17}}>
+                        <Typography variant="subtitle2" className={classes.description}>
                             {Anoop.description}
                         </Typography>
                     </Description>
@@ -58,10 +78,10 @@ const AboutUs = () => {
                         target="_blank">
                             <InstagramIcon 
                                 color="secondary" 
-                                style={{fontSize: 35, cursor: 'pointer', marginTop: '15px'}} /> 
+                                className={classes.iconicon} /> 
                     </Link> 
                     <Description>
-                        <Typography variant="subtitle2" style={{fontSize: 17}}>
+                        <Typography variant="subtitle2" className={classes.description}>
                             {Tilak.description}
                         </Typography>
                     </Description>

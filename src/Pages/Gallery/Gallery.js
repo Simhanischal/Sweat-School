@@ -1,11 +1,19 @@
 import React from 'react';
-import Typography from '@material-ui/core/Typography';
 import { PageGallery } from '../../Data/GalleryData';
 import GalleryRow from './Components/GalleryRow';
+import { makeStyles } from '@material-ui/core';
+import Typography from '@material-ui/core/Typography';
+
+const useStyles = makeStyles({
+    container: {
+        marginTop: '100px',
+    },
+});
 
 const Gallery = () => {
+    const classes = useStyles();
     return(
-        <div style={{marginTop: '100px'}}>
+        <div className={classes.container}>
             <Typography variant="h3" style={{textDecoration: 'underline'}}>
                 Gallery 
             </Typography>

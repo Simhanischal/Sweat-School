@@ -16,8 +16,11 @@ const useStyles = makeStyles({
         transition: "0.3s",
         "&:hover": {
             boxShadow: "0 8px 16px 0 rgba(0,0,0,0.2)",
-        }
-    }
+        },
+    },
+    description: {
+        textAlign: 'left',
+    },
 });
 
 const CardWithImage = props => {
@@ -48,8 +51,12 @@ const CardWithImage = props => {
                     }
                     {
                         props.description &&
-                        <Typography style={{textAlign: "left"}} variant="body2" color="textSecondary" component="p">
-                            {props.description}
+                        <Typography 
+                            className={classes.description} 
+                            variant="body2" 
+                            color="textSecondary" 
+                            component="p">
+                                {props.description}
                         </Typography>
                     }   
                     </CardContent> 
