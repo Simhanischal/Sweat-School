@@ -1,19 +1,19 @@
 import React from 'react';
-import styled from 'styled-components';
+// import styled from 'styled-components';
 import { TransformationData } from '../../Data/TransformationData';
 import Transformation from './Components/Transformation';
 import { makeStyles } from '@material-ui/core';
 import Typography from '@material-ui/core/Typography';
 
-const LineDivider = styled.div`
-    margin-top: 25px;
-    background-color: #000000;
-    height: 1px;
-    width: 100vw;
-    @media screen and (max-width: 500px){
-        width: 650px;
-    }
-`;
+// const LineDivider = styled.div`
+//     margin-top: 25px;
+//     background-color: #000000;
+//     height: 1px;
+//     width: 100vw;
+//     @media screen and (max-width: 500px){
+//         width: 650px;
+//     }
+// `;
 
 const useStyles = makeStyles({
     container: {
@@ -44,7 +44,6 @@ const Transformations = () => {
                                 description={transformation.description}
                                 readMore={transformation.readMore}
                             />
-                            {/* <LineDivider /> */}
                         </div>
                     )
                 })
