@@ -52,7 +52,7 @@ const AboutUs = () => {
                 direction="row"
                 justify="space-between"
             >
-                <Grid item xs={12} sm={6}>
+                <Grid item xs={12} md={6}>
                     <Typography variant="h4">{Anoop.name}</Typography>
                     <Typography variant="subtitle1">{Anoop.designation}</Typography>
                     <FounderAvatar name="Anoop" image={Anoop.image} />
@@ -69,7 +69,7 @@ const AboutUs = () => {
                         </Typography>
                     </Description>
                 </Grid>
-                <Grid item xs={12} sm={6}>
+                <Grid item xs={12} md={6}>
                     <Typography variant="h4">{Tilak.name}</Typography>
                     <Typography variant="subtitle1">{Tilak.designation}</Typography>
                     <FounderAvatar name="Tilak" image={Tilak.image} />

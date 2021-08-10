@@ -9,7 +9,7 @@ import Button from '@material-ui/core/Button';
 
 const useStyles = makeStyles({
     image: {
-        marginLeft: '100px',
+        // marginLeft: '100px',
         width: '500px',
         height: '400px',
         '@media screen and (max-width: 800px)':{

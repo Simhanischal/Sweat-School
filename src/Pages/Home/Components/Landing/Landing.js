@@ -19,6 +19,9 @@ const useStyles = makeStyles({
     image: {
         width: '400px',
         height: '500px',
+        '@media screen and (max-width: 600px)': {
+            marginLeft: '50px',
+        },
     },
     backgroundImage: {
         backgroundImage: 'url("https://www-growth.scdn.co/static/home/bursts.svg")',
@@ -28,6 +31,9 @@ const useStyles = makeStyles({
         },
         '@media screen and (min-width: 600px)': {
             backgroundPosition: '-55% -8%',
+        },
+        '@media screen and (min-width: 800px)': {
+            backgroundPosition: '-45% -8%',
         },
     },
     button: {
