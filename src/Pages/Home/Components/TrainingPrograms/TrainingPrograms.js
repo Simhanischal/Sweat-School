@@ -15,7 +15,7 @@ const useStyles = makeStyles({
         marginBottom: '25px',
     },
     program: {
-        '@media screen and (max-width: 800px)': {
+        '@media screen and (max-width: 600px)': {
             marginTop: '50px',
         },
     },
@@ -51,7 +51,7 @@ const TrainingPrograms = () => {
             </Typography>
 
             <Grid container justify="space-around" direction="row">
-                <Grid item xs={12} md={3}>
+                <Grid item xs={12} sm={3}>
                     <CardWithImage 
                         name={Calisthenics.name}
                         image={Calisthenics.image}
@@ -60,7 +60,7 @@ const TrainingPrograms = () => {
                         button={<LinkButton program='calisthenics' />}
                     />
                 </Grid>
-                <Grid item xs={12} md={3} className={classes.program}>
+                <Grid item xs={12} sm={3} className={classes.program}>
                     <CardWithImage 
                         name={Functional.name}
                         image={Functional.image}
@@ -69,7 +69,7 @@ const TrainingPrograms = () => {
                         button={<LinkButton program='functional' />}
                     />
                 </Grid>
-                <Grid item xs={12} md={3} className={classes.program}>
+                <Grid item xs={12} sm={3} className={classes.program}>
                     <CardWithImage 
                         name={AnimalFlow.name}
                         image={AnimalFlow.image}

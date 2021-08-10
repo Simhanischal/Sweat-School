@@ -10,7 +10,7 @@ import HighQualityIcon from '@material-ui/icons/HighQuality';
 
 const useStyles = makeStyles({
     feature: {
-        '@media screen and (max-width: 800px)':{
+        '@media screen and (max-width: 600px)':{
             marginTop: '30px',
         },
     },
@@ -29,25 +29,25 @@ const UniqueFeatures = () => {
         <div>
             <Typography variant="h4" className={classes.heading}>Our Unique Features</Typography>
             <Grid container justify="space-around" direction="row">
-                <Grid item xs={12} md={2}>
+                <Grid item xs={12} sm={2}>
                     <CardWithImage 
                         icon={<FitnessCenterIcon className={classes.icon} />}
                         heading="Functional Training"
                     />
                 </Grid>
-                <Grid item xs={12} md={2} className={classes.feature}>
+                <Grid item xs={12} sm={2} className={classes.feature}>
                     <CardWithImage 
                         icon={<HowToRegIcon className={classes.icon} />}
                         heading="Individual Attention"
                     />
                 </Grid>
-                <Grid item xs={12} md={2} className={classes.feature}>
+                <Grid item xs={12} sm={2} className={classes.feature}>
                     <CardWithImage 
                         icon={<HighQualityIcon className={classes.icon} />}
                         heading="Certified Trainers"
                     />
                 </Grid>
-                <Grid item xs={12} md={2} className={classes.feature}>
+                <Grid item xs={12} sm={2} className={classes.feature}>
                     <CardWithImage 
                         icon={<DirectionsBikeIcon className={classes.icon} />}
                         heading="Outdoor Activities"

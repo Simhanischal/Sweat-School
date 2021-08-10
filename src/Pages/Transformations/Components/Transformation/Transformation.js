@@ -36,7 +36,7 @@ const useStyles = makeStyles({
     button: {
         marginTop: '10px',
         marginBottom: '10px',
-        '@media screen and (max-width: 800px)':{
+        '@media screen and (max-width: 600px)':{
             marginLeft: '70px',
             marginBottom: '-12px',
         }

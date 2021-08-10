@@ -50,16 +50,17 @@ const NavHome = styled.li`
 const NavLogo = styled.img`
     ${'' /* margin-top: -60px; */}
     ${'' /* margin-top: 0; */}
-    height: ${props => props.display === "mobile"? "60px": "70px"};
+    height: ${props => props.display === "mobile"? "70px": "70px"};
+    width: 80px;
     @media screen and (max-width: 800px){
         position: absolute;
-        top: 5px;
+        top: 0;
         margin-left: -10px;
     }
 `;
 
 const NavLink = styled.li`
-    margin-top: 25px;
+    margin-top: 20px;
     float: ${props => props.float || "right"};
     display: ${props => props.display};
     text-align: ${props => props.textAlign || "right"};
@@ -80,9 +81,8 @@ const NavMenu = styled.div`
 const useStyles = makeStyles({
     link: {
         textDecoration: 'none',
-        color: '#000000',
         '&:hover':{
-            textDecoration: 'underline',
+            opacity: '50%',
         },
         display: 'flex',
     },
@@ -122,24 +122,24 @@ const Navbar = () => {
                         </Link>
                     </NavHome> 
                     <NavLink>
-                        <Typography variant="body1">
-                            <Link to="/about" className={classes.link}>About Us</Link>
-                        </Typography>
+                        <Link to="/about" className={classes.link}>
+                            <Typography variant="h6" color="primary">About Us</Typography>
+                        </Link>
                     </NavLink>
                     <NavLink>
-                        <Typography variant="body1">
-                            <Link to="/gallery" className={classes.link}>Gallery</Link>
-                        </Typography>
+                        <Link to="/gallery" className={classes.link}>
+                            <Typography variant="h6" color="primary">Gallery</Typography>
+                        </Link>
                     </NavLink>
                     <NavLink>
-                        <Typography variant="body1">
-                            <Link to="/transformations" className={classes.link}>Transformations</Link>
-                        </Typography>    
+                        <Link to="/transformations" className={classes.link}>
+                            <Typography variant="h6" color="primary">Transformations</Typography>
+                        </Link>   
                     </NavLink>
                     <NavLink>
-                        <Typography variant="body1">
-                            <HashLink to="/#trainings" className={classes.link}>Training Programs</HashLink>
-                        </Typography>
+                        <HashLink to="/#trainings" className={classes.link}>
+                            <Typography variant="h6" color="primary">Training Programs</Typography>
+                        </HashLink>
                     </NavLink>
                     <NavMenu />
                 </Bar>
@@ -155,33 +155,33 @@ const Navbar = () => {
                     </NavHome>
                     <NavLink float="none" textAlign="left" display={display} style={{marginTop: '80px'}}>
                         <HashLink to="/#trainings" className={classes.link}>
-                            <FitnessCenterIcon className={classes.navIcon} />
-                            <Typography variant="h6">Training Programs</Typography>
+                            <FitnessCenterIcon color="primary" className={classes.navIcon} />
+                            <Typography color="primary" variant="h5">Training Programs</Typography>
                         </HashLink>
                     </NavLink>
                     <NavLink float="none" textAlign="left" display={display}>
                         <Link to="/transformations" className={classes.link}>
-                            <TransformIcon className={classes.navIcon} />
-                            <Typography variant="h6">Transformations</Typography>
+                            <TransformIcon color="primary" className={classes.navIcon} />
+                            <Typography color="primary" variant="h5">Transformations</Typography>
                         </Link>    
                     </NavLink>
                     <NavLink float="none" textAlign="left" display={display}>
                         <Link to="/gallery" className={classes.link}>
-                            <PhotoLibraryIcon className={classes.navIcon} />
-                            <Typography variant="h6">Gallery</Typography>
+                            <PhotoLibraryIcon color="primary" className={classes.navIcon} />
+                            <Typography color="primary" variant="h5">Gallery</Typography>
                         </Link>
                     </NavLink>
                     <NavLink float="none" textAlign="left" display={display}>
                         <Link to="/about" className={classes.link}>
-                            <GroupIcon className={classes.navIcon} />
-                            <Typography variant="h6">About Us</Typography>
+                            <GroupIcon color="primary" className={classes.navIcon} />
+                            <Typography color="primary" variant="h5">About Us</Typography>
                         </Link>
                     </NavLink>
                     <NavMenu display="block" onClick={menuClickHandler}>
                         {
                             display==="none"
-                            ? <MenuIcon className={classes.menuIcon} />
-                            : <CloseIcon className={classes.menuIcon} />
+                            ? <MenuIcon color="primary" className={classes.menuIcon} />
+                            : <CloseIcon color="error" className={classes.menuIcon} />
                         }
                     </NavMenu>
                 </Bar>

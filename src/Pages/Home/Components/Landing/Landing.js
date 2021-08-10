@@ -8,6 +8,14 @@ import { makeStyles } from '@material-ui/styles';
 import { useMediaQuery } from 'react-responsive';
 
 const useStyles = makeStyles({
+    actionGrid: {
+        textAlign: 'left',
+        marginLeft: '150px',
+        '@media screen and (max-width: 800px)': {
+            textAlign: 'center',
+            marginLeft: '0',
+        },
+    },
     image: {
         width: '400px',
         height: '500px',
@@ -15,13 +23,15 @@ const useStyles = makeStyles({
     backgroundImage: {
         backgroundImage: 'url("https://www-growth.scdn.co/static/home/bursts.svg")',
         backgroundPosition: '-45% -10%',
-        '@media screen and (max-width: 800px)': {
+        '@media screen and (max-width: 600px)': {
             backgroundPosition: '-35% -8%',
+        },
+        '@media screen and (min-width: 600px)': {
+            backgroundPosition: '-55% -8%',
         },
     },
     button: {
         marginTop: '20px',
-        marginRight: '190px',
         '@media screen and (max-width: 800px)': {
             margin: '0 auto',
             fontSize: '17px',
@@ -35,7 +45,7 @@ const useStyles = makeStyles({
     },
     subHeading: {
         marginTop: '10px', 
-        marginLeft: '30px',
+        // marginLeft: '30px',
         '@media screen and (max-width: 800px)': {
             marginLeft: '10px',
             marginBottom: '20px',
@@ -43,8 +53,8 @@ const useStyles = makeStyles({
     },
     description: {
         marginTop: '10px',
-        textAlign: 'left',
-        marginLeft: '160px',
+        // textAlign: 'left',
+        // marginLeft: '140px',
         '@media screen and (max-width: 800px)': {
             marginLeft: '20px',
             marginBottom: '20px',
@@ -64,21 +74,23 @@ const Landing = () => {
             container 
             justify="space-around" 
             direction={isMobile === true? "column-reverse": "row"}>
-                <Grid item xs={12} md={6} className={classes.actionGrid} >
-                    <Typography variant="h2" className={classes.heading}>Sweat School</Typography>
-                    <Typography variant="h5" className={classes.subHeading}>
-                        A community for fitness enthusiasts!
-                    </Typography>
-                    <Typography variant="h6" className={classes.description} >
-                        It's time to stop getting scammed by false promises and 
-                        start getting trained by certified professionals with the right knowledge to help reach your 
-                        goal.! 
-                    </Typography>
-                    <Button variant="contained" color="primary" className={classes.button}>
-                        <HashLink to="/#trainings" className={classes.link}>
-                            Start Sweating!
-                        </HashLink>
-                    </Button>
+                <Grid item xs={12} md={6}>
+                    <div className={classes.actionGrid}>
+                        <Typography variant="h2" className={classes.heading}>Sweat School</Typography>
+                        <Typography variant="h5" className={classes.subHeading}>
+                            A community for fitness enthusiasts!
+                        </Typography>
+                        <Typography variant="h6" className={classes.description}>
+                            It's time to stop getting scammed by false promises and 
+                            start getting trained by certified professionals with the right 
+                            knowledge to help reach your goal! 
+                        </Typography>
+                        <Button variant="contained" color="primary" className={classes.button}>
+                            <HashLink to="/#trainings" className={classes.link}>
+                                Start Sweating!
+                            </HashLink>
+                        </Button>
+                    </div>
                 </Grid>
                 <Grid item xs={12} md={6} className={classes.backgroundImage}>
                     <img alt="Landing" src={AnoopLanding} className={classes.image} />

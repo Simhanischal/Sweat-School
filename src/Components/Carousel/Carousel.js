@@ -23,7 +23,7 @@ const ButtonIcon = styled.button`
     &:hover{
         box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
     }
-    @media screen and (max-width: 800px){
+    @media screen and (max-width: 600px){
         cursor: none;
     }
 `;
@@ -31,7 +31,7 @@ const ButtonIcon = styled.button`
 const CarouselImage = styled.img`
     width: 600px;
     height: 400px;
-    @media screen and (max-width: 800px){
+    @media screen and (max-width: 600px){
         width: 400px;
     }
 `;

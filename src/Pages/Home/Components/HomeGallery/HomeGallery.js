@@ -15,7 +15,7 @@ const useStyles = makeStyles({
         '&:hover': {
             opacity: '50%',
         },
-        '@media screen and (max-width: 800px)': {
+        '@media screen and (max-width: 600px)': {
             marginTop: '50px',
         }
     },
@@ -37,7 +37,7 @@ const HomeGallery = props => {
                 Our Memories
             </Typography>
             <Grid container justify="space-around">
-                <Grid item xs={12} md={3} className={classes.firstGrid}>
+                <Grid item xs={12} sm={3} className={classes.firstGrid}>
                     <Link to="/gallery">
                         <CardWithImage 
                             name="Gallery1" 
@@ -46,7 +46,7 @@ const HomeGallery = props => {
                         />
                     </Link>
                 </Grid>
-                <Grid item xs={12} md={3} className={classes.grid}>
+                <Grid item xs={12} sm={3} className={classes.grid}>
                     <Link to="/gallery">
                         <CardWithImage
                             name="Gallery2" 
@@ -55,7 +55,7 @@ const HomeGallery = props => {
                         />
                     </Link>
                 </Grid>  
-                <Grid item xs={12} md={3} className={classes.grid}>
+                <Grid item xs={12} sm={3} className={classes.grid}>
                     <Link to="/gallery">
                         <CardWithImage
                             name="Gallery3" 
