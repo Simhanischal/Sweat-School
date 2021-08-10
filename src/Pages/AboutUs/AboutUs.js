@@ -61,7 +61,7 @@ const AboutUs = () => {
                         target="_blank">
                             <InstagramIcon 
                                 color="secondary" 
-                                className={classes.iconicon} /> 
+                                className={classes.icon} /> 
                     </Link>
                     <Description>
                         <Typography variant="subtitle2" className={classes.description}>
@@ -78,7 +78,7 @@ const AboutUs = () => {
                         target="_blank">
                             <InstagramIcon 
                                 color="secondary" 
-                                className={classes.iconicon} /> 
+                                className={classes.icon} /> 
                     </Link> 
                     <Description>
                         <Typography variant="subtitle2" className={classes.description}>

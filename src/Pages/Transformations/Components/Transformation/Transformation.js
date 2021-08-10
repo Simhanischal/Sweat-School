@@ -36,6 +36,10 @@ const useStyles = makeStyles({
     button: {
         marginTop: '10px',
         marginBottom: '10px',
+        '@media screen and (max-width: 800px)':{
+            marginLeft: '70px',
+            marginBottom: '-12px',
+        }
     },
     link: {
         textDecoration: 'none',
