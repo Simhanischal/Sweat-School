@@ -23,34 +23,22 @@ const Nav = styled.nav`
     z-index: 100;
     overflow: hidden;
     box-shadow: 0 3px 6px 0 rgb(0 0 0 / 15%);
-    @media screen and (max-width: 800px){
-        ${'' /* margin-bottom: ${props => props.display === "block" && "70px"}; */}
-    }
 `;
 
 const Bar = styled.ul`
     margin-top: 0;
-    ${'' /* overflow: hidden; */}
     list-style-type: none;  
     @media screen and (max-width: 800px){
         overflow: hidden;
     }
-    ${'' /* position: ${props => props.position || "static"}; */}
 `;
 
 const NavHome = styled.li`
     float: left;
-    ${'' /* margin-top: 0; */}
-    ${'' /* @media screen and (max-width: 800px){
-        position: absolute;
-        top: 0;
-    } */}
 `;
 
 const NavLogo = styled.img`
-    ${'' /* margin-top: -60px; */}
-    ${'' /* margin-top: 0; */}
-    height: ${props => props.display === "mobile"? "70px": "70px"};
+    height: 70px;
     width: 80px;
     @media screen and (max-width: 800px){
         position: absolute;
@@ -66,9 +54,8 @@ const NavLink = styled.li`
     text-align: ${props => props.textAlign || "right"};
     padding: ${props => !props.display && "0 15px"};
     @media screen and (max-width: 800px){
-        margin-top: 50px;
+        margin-top: ${props => props.firstLink? "80px": "50px"};
     }
-    ${'' /* border-left: 2px solid black; */}
 `;
 
 const NavMenu = styled.div`
@@ -79,6 +66,9 @@ const NavMenu = styled.div`
 `;
 
 const useStyles = makeStyles({
+    menuContainer: {
+        marginTop: '50px',
+    },
     link: {
         textDecoration: 'none',
         '&:hover':{
@@ -153,30 +143,32 @@ const Navbar = () => {
                             <NavLogo alt="logo" src={Logo} display="mobile" />
                         </Link>
                     </NavHome>
-                    <NavLink float="none" textAlign="left" display={display} style={{marginTop: '80px'}}>
-                        <HashLink to="/#trainings" className={classes.link}>
-                            <FitnessCenterIcon color="primary" className={classes.navIcon} />
-                            <Typography color="primary" variant="h5">Training Programs</Typography>
-                        </HashLink>
-                    </NavLink>
-                    <NavLink float="none" textAlign="left" display={display}>
-                        <Link to="/transformations" className={classes.link}>
-                            <TransformIcon color="primary" className={classes.navIcon} />
-                            <Typography color="primary" variant="h5">Transformations</Typography>
-                        </Link>    
-                    </NavLink>
-                    <NavLink float="none" textAlign="left" display={display}>
-                        <Link to="/gallery" className={classes.link}>
-                            <PhotoLibraryIcon color="primary" className={classes.navIcon} />
-                            <Typography color="primary" variant="h5">Gallery</Typography>
-                        </Link>
-                    </NavLink>
-                    <NavLink float="none" textAlign="left" display={display}>
-                        <Link to="/about" className={classes.link}>
-                            <GroupIcon color="primary" className={classes.navIcon} />
-                            <Typography color="primary" variant="h5">About Us</Typography>
-                        </Link>
-                    </NavLink>
+                    <div className={classes.menuContainer}>
+                        <NavLink float="none" firstLink textAlign="left" display={display} >
+                            <HashLink to="/#trainings" className={classes.link}>
+                                <FitnessCenterIcon color="primary" className={classes.navIcon} />
+                                <Typography color="primary" variant="h5">Training Programs</Typography>
+                            </HashLink>
+                        </NavLink>
+                        <NavLink float="none" textAlign="left" display={display}>
+                            <Link to="/transformations" className={classes.link}>
+                                <TransformIcon color="primary" className={classes.navIcon} />
+                                <Typography color="primary" variant="h5">Transformations</Typography>
+                            </Link>    
+                        </NavLink>
+                        <NavLink float="none" textAlign="left" display={display}>
+                            <Link to="/gallery" className={classes.link}>
+                                <PhotoLibraryIcon color="primary" className={classes.navIcon} />
+                                <Typography color="primary" variant="h5">Gallery</Typography>
+                            </Link>
+                        </NavLink>
+                        <NavLink float="none" textAlign="left" display={display}>
+                            <Link to="/about" className={classes.link}>
+                                <GroupIcon color="primary" className={classes.navIcon} />
+                                <Typography color="primary" variant="h5">About Us</Typography>
+                            </Link>
+                        </NavLink>
+                    </div>
                     <NavMenu display="block" onClick={menuClickHandler}>
                         {
                             display==="none"
