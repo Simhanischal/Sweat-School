@@ -10,18 +10,19 @@ import ExpandLessIcon from '@material-ui/icons/ExpandLess';
 
 const Image = styled.img`
     width: 500px;
-    height: 450px;
+    height: 400px;
     border: 2px solid #000000;
     @media screen and (max-width: 800px){
         ${'' /* width: 400px; */}
         width: 100vw;
     }
 `;
+//
 const Details = styled.div`
     margin: 0 auto;
     text-align: left;
-    ${'' /* width: 600px; */}
-    padding: 5px 15px;
+    width: 550px;
+    padding: 0 15px;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
     transition: 0.3s;
     &:hover{
@@ -29,6 +30,23 @@ const Details = styled.div`
     }
     @media screen and (max-width: 800px){
         padding: 0;
+        width: 100vw;
+    }
+`;
+
+const Description = styled.article`
+    max-height: 300px;
+    overflow-y: auto;
+    ::-webkit-scrollbar {
+        width: 5px;
+    }
+    ::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 5px #d3d3d3;
+        border-radius: 10px;
+    }
+    ::-webkit-scrollbar-thumb {
+        background: #c3c3c3;
+        border-radius: 10px;
     }
 `;
 
@@ -80,12 +98,12 @@ const Transformation = props => {
     }
     return(
         <>
-            <Grid container direction="row" justify="center">
+            <Grid container direction="row" justify="space-around">
                 <Grid item xs={12} md={6}>
                     {
                         props.name === "Your Name"
-                        ?<img alt="Your Transformation" src={props.image} width="200" />
-                        :<Image alt="Transformation Item" src={props.image} />
+                        ? <img alt="Your Transformation" src={props.image} width="200" />
+                        : <Image alt="Transformation Item" src={props.image} />
                     }
                 </Grid>
                 <Grid item xs={12} md={6}>
@@ -93,13 +111,16 @@ const Transformation = props => {
                         <Typography variant="h4" color="primary">
                             {props.name} 
                         </Typography>
-                        <Typography 
-                            variant="subtitle1" 
-                            className={readMore? classes.showDetails: classes.hideDetails}
-                        >
-                            {props.description}
-                        </Typography>
-                        {props.name === "Your Name" && 
+                        <Description>
+                            <Typography 
+                                variant="subtitle1" 
+                                className={readMore? classes.showDetails: classes.hideDetails}
+                            >
+                                {props.description}
+                            </Typography>
+                        </Description>
+                        {
+                            props.name === "Your Name" && 
                             <Link 
                                 className={classes.link} 
                                 to={{pathname: transformationWhatsappLink}}
