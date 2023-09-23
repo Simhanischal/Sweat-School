@@ -1,6 +1,6 @@
-# Sweat-School-POC
+# Sweat-School
 
-A frontend only website POC for Sweat School fitness organization.
+Wwebsite for Sweat School fitness organization.
 
 ## Technologies Used
 #### React, Material-UI, Styled Components
